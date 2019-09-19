@@ -6,8 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica2_AYDS1", "Practica2_AYDS1\Practica2_AYDS1.csproj", "{3459BE91-A116-416E-9171-7D53BDACD33E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Practica2_Test", "Practica2_Test\Practica2_Test.csproj", "{E66BFAA9-EA64-49A1-BD17-32A16CF55076}"
+	ProjectSection(ProjectDependencies) = postProject
+		{65E0F25F-EE36-4ED4-80B0-F979902F718C} = {65E0F25F-EE36-4ED4-80B0-F979902F718C}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App_Web_P2_AYDS1", "App_Web_P2_AYDS1\App_Web_P2_AYDS1.csproj", "{1F38E527-2A01-4584-B2C8-65B19F6C56B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web_Practica2_AYD1", "Web_Practica2_AYD1\Web_Practica2_AYD1.csproj", "{65E0F25F-EE36-4ED4-80B0-F979902F718C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +26,10 @@ Global
 		{E66BFAA9-EA64-49A1-BD17-32A16CF55076}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E66BFAA9-EA64-49A1-BD17-32A16CF55076}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E66BFAA9-EA64-49A1-BD17-32A16CF55076}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1F38E527-2A01-4584-B2C8-65B19F6C56B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F38E527-2A01-4584-B2C8-65B19F6C56B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F38E527-2A01-4584-B2C8-65B19F6C56B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F38E527-2A01-4584-B2C8-65B19F6C56B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65E0F25F-EE36-4ED4-80B0-F979902F718C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65E0F25F-EE36-4ED4-80B0-F979902F718C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65E0F25F-EE36-4ED4-80B0-F979902F718C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65E0F25F-EE36-4ED4-80B0-F979902F718C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Practica2_AYDS1\Practica2_AYDS1.csproj" />
+    <ProjectReference Include="..\Web_Practica2_AYD1\Web_Practica2_AYD1.csproj" />
   </ItemGroup>
 
 </Project>

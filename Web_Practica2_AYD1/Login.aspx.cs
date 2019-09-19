@@ -5,13 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace App_Web_P2_AYDS1
+namespace Web_Practica2_AYD1
 {
-    public partial class _Default : Page
+    public partial class Login : System.Web.UI.Page
     {
+        public string a;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            a = "hola";
         }
     }
 }
