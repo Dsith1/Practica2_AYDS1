@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace Web_Practica2_AYD1
+namespace Practica2_AYDS1
 {
     public class Global : System.Web.HttpApplication
     {
