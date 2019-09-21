@@ -11,7 +11,7 @@ namespace Practica2_AYDS1
 {
     public partial class ADDCarro : System.Web.UI.Page
     {
-        string cadena = "data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;";
+        string cadena = "data source = HILBERTPC; initial catalog = Taller; integrated security = True;";
         public Coneccion coneccion;
         string errores;
         SqlConnection con = null;

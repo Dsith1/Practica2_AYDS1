@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.SqlClient;
 //using System.Fabric;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Web_Practica2_AYD1;
 
 namespace Practica2_AYDS1.Tests
 {
@@ -37,7 +36,7 @@ namespace Practica2_AYDS1.Tests
 
             Coneccion a = new Coneccion();
 
-            a.SetCadena("data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;");
+            a.SetCadena("data source = HILBERTPC; initial catalog = Taller; integrated security = True;");
 
 
 
@@ -67,7 +66,7 @@ namespace Practica2_AYDS1.Tests
 
             Coneccion a = new Coneccion();
 
-            a.SetCadena("data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;");
+            a.SetCadena("data source = HILBERTPC; initial catalog = Taller; integrated security = True;");
 
             SqlConnection probando= a.conectar();
 
@@ -101,7 +100,7 @@ namespace Practica2_AYDS1.Tests
 
             a.coneccion = new Coneccion();
 
-            a.coneccion.SetCadena("data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;");
+            a.coneccion.SetCadena("data source = HILBERTPC; initial catalog = Taller; integrated security = True;");
             
 
             Assert.IsNotNull(a.getClientes());
@@ -116,7 +115,7 @@ namespace Practica2_AYDS1.Tests
 
             a.coneccion = new Coneccion();
 
-            a.coneccion.SetCadena("data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;");
+            a.coneccion.SetCadena("data source = HILBERTPC; initial catalog = Taller; integrated security = True;");
 
             Assert.IsTrue(a.AgregarCliente("Juan", "Pedro", "Casas", "Casas","2222222"));
             
@@ -160,7 +159,7 @@ namespace Practica2_AYDS1.Tests
 
             a.coneccion = new Coneccion();
 
-            a.coneccion.SetCadena("data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;");
+            a.coneccion.SetCadena("data source = HILBERTPC; initial catalog = Taller; integrated security = True;");
 
             Assert.IsTrue(a.AgregarProveedor("Juan", "2222222"));
 

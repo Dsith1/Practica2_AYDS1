@@ -1,27 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddEntrega.aspx.cs" Inherits="Practica2_AYDS1.AddEntrega" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AddEntrega.aspx.cs" Inherits="Practica2_AYDS1.AddEntrega" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <style type="text/css">
-
-
-        .auto-style2 {
-            margin-left: 79px;
-        }
-        .auto-style1 {
-            width: 193px;
-        }
-        .auto-style3 {
-            margin-left: 83px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div>
         <div>
             <asp:HiddenField ID="HFUsuario" runat="server" />
@@ -88,6 +69,4 @@
 
     </div>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>

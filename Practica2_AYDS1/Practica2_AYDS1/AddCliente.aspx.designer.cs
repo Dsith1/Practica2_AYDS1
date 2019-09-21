@@ -7,19 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Web_Practica2_AYD1 {
+namespace Practica2_AYDS1 {
     
     
-    public partial class WebForm1 {
-        
-        /// <summary>
-        /// Control form1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+    public partial class AddCliente {
         
         /// <summary>
         /// Control HFUsuario.
@@ -46,7 +37,7 @@ namespace Web_Practica2_AYD1 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        public global::System.Web.UI.WebControls.TextBox txtNombre1;
+        protected global::System.Web.UI.WebControls.TextBox txtNombre1;
         
         /// <summary>
         /// Control Label2.
@@ -56,7 +47,7 @@ namespace Web_Practica2_AYD1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-
+        
         /// <summary>
         /// Control txtNombre2.
         /// </summary>
@@ -64,7 +55,7 @@ namespace Web_Practica2_AYD1 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        public global::System.Web.UI.WebControls.TextBox txtNombre2;
+        protected global::System.Web.UI.WebControls.TextBox txtNombre2;
         
         /// <summary>
         /// Control Label3.
@@ -74,7 +65,7 @@ namespace Web_Practica2_AYD1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-
+        
         /// <summary>
         /// Control txtApellido1.
         /// </summary>
@@ -82,7 +73,7 @@ namespace Web_Practica2_AYD1 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        public global::System.Web.UI.WebControls.TextBox txtApellido1;
+        protected global::System.Web.UI.WebControls.TextBox txtApellido1;
         
         /// <summary>
         /// Control Label4.
@@ -92,7 +83,7 @@ namespace Web_Practica2_AYD1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-
+        
         /// <summary>
         /// Control txtApellido2.
         /// </summary>
@@ -100,7 +91,7 @@ namespace Web_Practica2_AYD1 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        public global::System.Web.UI.WebControls.TextBox txtApellido2;
+        protected global::System.Web.UI.WebControls.TextBox txtApellido2;
         
         /// <summary>
         /// Control Label5.
@@ -110,7 +101,7 @@ namespace Web_Practica2_AYD1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label5;
-
+        
         /// <summary>
         /// Control txtTelefono.
         /// </summary>
@@ -118,7 +109,7 @@ namespace Web_Practica2_AYD1 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        public global::System.Web.UI.WebControls.TextBox txtTelefono;
+        protected global::System.Web.UI.WebControls.TextBox txtTelefono;
         
         /// <summary>
         /// Control btnAgregarCliente.

@@ -1,26 +1,36 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="Practica2_AYDS1.Inicio" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="Practica2_AYDS1.CrearRepuesto" %>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<!DOCTYPE html>
+    <div class="jumbotron">
+        <h1>TALLER</h1>
+        <p class="lead">Un sistema en el cual podrá hacer las gestiones que un taller necesita como el de ingresar cliente, ingresar un proveedor, gestionar las facturas y demas procesos que sean necesarios dentro del taller.</p>
+    </div>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Agregar Cliente</asp:LinkButton>
-            <br />
-            <br />
-            <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Agregar Proveedor</asp:LinkButton>
-            <br />
-            <br />
-            <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">Crear Repuesto</asp:LinkButton>
-            <br />
-            <br />
-            <asp:LinkButton ID="LinkButton4" runat="server" OnClick="LinkButton4_Click">Agregar Empleado</asp:LinkButton>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Repuestos</h2>
+            <p class="lead">¡LA MEJOR CALIDAD ACÁ!</p>
+            <p>
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/Imagenes/repuestos.jpg" Height="157px" Width="272px" />
+            </p>
+           
         </div>
-    </form>
-</body>
-</html>
+        <div class="col-md-4">
+            <h2>ATENCION AL CLIENTE</h2>
+             <p class="lead">Un excelente atencion a nuestros clientes</p>
+            <p>
+               <asp:Image ID="Image2" runat="server" ImageUrl="~/Imagenes/atencion.jpg" Height="157px" Width="214px" />
+            </p>
+            
+        </div>
+        <div class="col-md-4">
+            <h2>CONTROL DE EMPLEADOS</h2>
+            <p class="lead">Diversidad de equipos para la atencion de su vehiculo</p>
+            <p>
+                <asp:Image ID="Image3" runat="server" ImageUrl="~/Imagenes/arreglando.jpg" Height="157px" Width="286px" />
+            </p>
+            
+        </div>
+    </div>
+
+</asp:Content>
