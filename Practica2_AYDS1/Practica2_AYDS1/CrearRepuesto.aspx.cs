@@ -40,7 +40,7 @@ namespace Practica2_AYDS1
 
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Ingresar repesto: ", ex.Message);
+                Console.WriteLine("Error al Ingresar repesto de carro: ", ex.Message);
             }
             finally
             {
