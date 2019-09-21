@@ -23,6 +23,7 @@ insert into Cliente(Nombre1,Nombr2,Apellido1,Apellido2,telefono)
 			values(@Nombre1,@Nombr2,@Apellido1,@Apellido2,@telefono);
 
 
+
 CREATE PROCEDURE CrearPlanilla(
 @DPI varchar(20),
 @Nombre1 varchar(20),
@@ -34,3 +35,22 @@ CREATE PROCEDURE CrearPlanilla(
 as 
 insert into Planilla(DPI,Nombre1,Nombr2,Apellido1,Apellido2,Salario)
 			values(@DPI,@Nombre1,@Nombr2,@Apellido1,@Apellido2,@Salario);
+
+create procedure ListarCliente
+as 
+select * from Cliente;
+
+
+create procedure CrearProveedor(
+@nombre varchar(30),
+@telefono varchar(8)
+)
+as 
+insert into Proveedor(nombre,telefono)
+			values(@nombre,@telefono);
+
+
+create procedure ListarProveedores
+as 
+select * from Proveedor;
+

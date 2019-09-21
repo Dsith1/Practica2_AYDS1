@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddCliente.aspx" />
+    <Content Include="AddProveedor.aspx" />
     <Content Include="Content\Style1.css" />
     <Content Include="Content\Style2.css" />
     <Content Include="CrearRepuesto.aspx" />
@@ -76,6 +78,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCliente.aspx.cs">
+      <DependentUpon>AddCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddCliente.aspx.designer.cs">
+      <DependentUpon>AddCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProveedor.aspx.cs">
+      <DependentUpon>AddProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProveedor.aspx.designer.cs">
+      <DependentUpon>AddProveedor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CrearRepuesto.aspx.cs">
       <DependentUpon>CrearRepuesto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
