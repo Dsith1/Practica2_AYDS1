@@ -7,37 +7,61 @@ namespace Practica2_AYDS1
 {
     public partial class AddProveedor : System.Web.UI.Page
     {
-        string cadena = "data source=DESKTOP-K27HD4T\\SQLEXPRESS;initial catalog=Taller;integrated security=True;";
+        string cadena = "data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;";
+        public Coneccion coneccion;
+        string errores;
         SqlConnection con = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            coneccion = new Coneccion();
             mostrarProveedores();
+
+            coneccion.SetCadena(cadena);
         }
 
         protected void btnAgregarProveedor_Click(object sender, EventArgs e)
         {
-            try
-            {
-                con = new SqlConnection(cadena);
-                con.Open();
 
-                SqlCommand cmd = new SqlCommand("CrearProveedor", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
-                cmd.Parameters.AddWithValue("@telefono", txtTelefono.Text);
-                cmd.ExecuteNonQuery();
+            if(AgregarProveedor(txtNombre.Text, txtTelefono.Text))
+            {
 
                 Limpiar();
                 lblSucces.Text = "Proveedor agregado exitosamente.";
 
                 mostrarProveedores();
-            }
-            catch (Exception ex) { lblError.Text = ex.Message; }
-            finally { con.Close(); }
 
+            }
+            else
+            {
+                lblError.Text = errores;
+            }
+
+            con.Close();
         }
 
+        public bool AgregarProveedor(string nombre,string telefono)
+        {
+            try
+            {
+                con = coneccion.conectar();
+
+
+                SqlCommand cmd = new SqlCommand("CrearProveedor", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nombre", nombre);
+                cmd.Parameters.AddWithValue("@telefono", telefono);
+                cmd.ExecuteNonQuery();
+
+                
+                return true;
+            }
+            catch (Exception ex) { errores = ex.Message;
+                return false;
+            }
+            finally {  }
+        }
         protected void mostrarProveedores()
         {
             try
@@ -53,7 +77,7 @@ namespace Practica2_AYDS1
         }
 
 
-        private DataSet getProeveedores()
+        public DataSet getProeveedores()
         {
             try
             {

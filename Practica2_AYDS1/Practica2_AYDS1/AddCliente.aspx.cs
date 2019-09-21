@@ -9,12 +9,15 @@ namespace Web_Practica2_AYD1
     public partial class WebForm1 : System.Web.UI.Page
     {
 
-        Coneccion coneccion;
+        public Coneccion coneccion;
+        string errores;
         
 
         public void Page_Load(object sender, EventArgs e)
         {
-            coneccion.SetCadena("data source = DESKTOP - K27HD4T\\SQLEXPRESS; initial catalog = Taller; integrated security = True;");
+            coneccion = new Coneccion();
+
+            coneccion.SetCadena("data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;");
 
             mostrarClientes();
 
@@ -23,11 +26,25 @@ namespace Web_Practica2_AYD1
         public void btnAgregarCliente_Click(object sender, EventArgs e)
         {
 
-            AgregarCliente(txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, txtTelefono.Text);
+           bool agregar=AgregarCliente(txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, txtTelefono.Text);
+
+            if (agregar)
+            {
+                Limpiar();
+                lblSucces.Text = "Cliente agregado exitosamente.";
+
+                mostrarClientes();
+            }
+            else
+            {
+                lblError.Text = errores;
+            }
         }
 
-        public void AgregarCliente(string nombre1, string nombre2, string apellido1, string apellido2, string telefono)
+        public bool AgregarCliente(string nombre1, string nombre2, string apellido1, string apellido2, string telefono)
         {
+
+            
             SqlConnection con = coneccion.conectar();
             try
             {
@@ -42,15 +59,17 @@ namespace Web_Practica2_AYD1
                 cmd.Parameters.AddWithValue("@telefono", telefono);
                 cmd.ExecuteNonQuery();
 
-                Limpiar();
-                lblSucces.Text = "Cliente agregado exitosamente.";
+                
 
-                mostrarClientes();
+                return true;
             }
-            catch (Exception ex) { lblError.Text = ex.Message; }
+            catch (Exception ex) {
+                errores = ex.Message;
+                return false; }
             finally
             {
                 coneccion.desconectar();
+                
             }
         }
 

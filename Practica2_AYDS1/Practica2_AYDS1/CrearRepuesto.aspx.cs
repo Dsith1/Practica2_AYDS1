@@ -11,41 +11,74 @@ namespace Practica2_AYDS1
 {
     public partial class CrearRepuesto : System.Web.UI.Page
     {
-        string cadena = "Data Source=HILBERTPC;Initial Catalog=Taller; Integrated Security=True";
+        string cadena = "data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;";
         SqlConnection con;
+        public Coneccion coneccion;
+        string errores;
 
         protected void Page_Load(object sender, EventArgs e)
-        { 
+        {
+            coneccion = new Coneccion();
             Conexion(cadena);
         }
         public string Conexion(string cadenaConexion)
         {
-            con = new SqlConnection(cadena);
-            con.Open();
-            return "Correcto";
+
+            try
+            {
+                coneccion.SetCadena(cadenaConexion);
+                con = coneccion.conectar();
+                con.ToString();
+                return "Correcto";
+            }
+            catch (Exception e)
+            {
+                return "INCorrecto";
+            }
+           
+            
         }
         protected void IngresarRepuesto(object sender, EventArgs e)
+        {
+          if(  IngresarRepuestoM(TextBox1.Text, TextBox2.Text, Convert.ToInt32(TextBox3.Text), TextBox4.Text))
+            {
+                Console.WriteLine("Exito");
+            }
+            else
+            {
+                Console.WriteLine("Error al Ingresar repesto de carro: ", errores);
+            }
+
+            Limpiar();
+            con.Close();
+        }
+
+        public bool IngresarRepuestoM(string parte,string carrorep, int anio,string existencias)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("dbo.CrearRepuesto", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@parteRep", TextBox1.Text);
-                cmd.Parameters.AddWithValue("@carroRep", TextBox2.Text);
-                cmd.Parameters.AddWithValue("@añoRep", Convert.ToInt32(TextBox3.Text));
-                cmd.Parameters.AddWithValue("@existenciasRep", TextBox4.Text);
+                cmd.Parameters.AddWithValue("@parteRep", parte);
+                cmd.Parameters.AddWithValue("@carroRep", carrorep);
+                cmd.Parameters.AddWithValue("@añoRep", anio);
+                cmd.Parameters.AddWithValue("@existenciasRep", existencias);
                 cmd.ExecuteNonQuery();
+
+                return true;
             }
 
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Ingresar repesto de carro: ", ex.Message);
+
+                errores = ex.Message;
+                return false;
             }
             finally
             {
-                con.Close();
-                Limpiar();
+               
+               
             }
         }
         protected void Limpiar()

@@ -13,19 +13,25 @@ namespace Practica2_AYDS1
     public partial class Planilla : System.Web.UI.Page
     {
 
-        string cadena = "Data Source=SERGIO\\SERGIO;Initial Catalog=Taller; Integrated Security=True";
+        string cadena = "data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;";
+        public Coneccion coneccion;
         SqlConnection con;
-        
+
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            coneccion = new Coneccion();
             Conexion(cadena);
         }
-        public Boolean Conexion(string cadenaConexion)
+        public bool Conexion(string cadenaConexion)
         {
             try
             {
-                con = new SqlConnection(cadena);
-                con.Open();
+                coneccion.SetCadena(cadenaConexion);
+                con=coneccion.conectar();
+                con.ToString();
                 return true;
             }
             catch (Exception e)
@@ -52,9 +58,10 @@ namespace Practica2_AYDS1
             values.Add(TextBox5.Text);
             values.Add(TextBox6.Text);
             IngresoDB(values);
+            Limpiar();
         }
 
-        public Boolean IngresoDB(ArrayList values) {
+        public bool IngresoDB(ArrayList values) {
             try
             {
                 SqlCommand cmd = new SqlCommand("dbo.CrearPlanilla", con);
@@ -62,13 +69,13 @@ namespace Practica2_AYDS1
 
                 cmd.Parameters.AddWithValue("@DPI", values[0]);
                 cmd.Parameters.AddWithValue("@Nombre1", values[1]);
-                cmd.Parameters.AddWithValue("@Nombre2", values[2]);
+                cmd.Parameters.AddWithValue("@Nombr2", values[2]);
                 cmd.Parameters.AddWithValue("@Apellido1", values[3]);
                 cmd.Parameters.AddWithValue("@Apellido2", values[4]);
                 cmd.Parameters.AddWithValue("@Salario", Convert.ToInt32(values[5]));
                 cmd.ExecuteNonQuery();
-                con.Close();
-                Limpiar();
+                coneccion.desconectar();
+                
                 Console.WriteLine("Hello World");
                 return true;
             }

@@ -63,6 +63,8 @@ namespace Practica2_AYDS1.Tests
         [TestMethod]
         public void InsertarValoresCorrectosShouldReturnTrue()
         {
+            
+
             ArrayList valuesTest = new ArrayList();
             valuesTest.Add("2931974320101");
             valuesTest.Add("Juan");
@@ -71,7 +73,12 @@ namespace Practica2_AYDS1.Tests
             valuesTest.Add("Perez");
             valuesTest.Add("3500");
             Planilla planilla = new Planilla();
-            
+
+            planilla.coneccion = new Coneccion();
+            String cadena = "data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;";
+            planilla.Conexion(cadena);
+
+
             Assert.IsTrue(planilla.IngresoDB(valuesTest));
         }
         [TestMethod]
@@ -86,23 +93,29 @@ namespace Practica2_AYDS1.Tests
             valuesTest.Add("%$");
             Planilla planilla = new Planilla();
 
+            planilla.coneccion = new Coneccion();
+            String cadena = "data source = You Shoul not Pass; initial catalog = Taller; integrated security = True;";
+            planilla.Conexion(cadena);
+
             Assert.IsFalse(planilla.IngresoDB(valuesTest));
         }
 
         [TestMethod]
         public void CadenaConexionCorrectaShouldReturnTrue()
         {
-            String cadena = "Data Source=SERGIO\\SERGIO;Initial Catalog=Taller; Integrated Security=True";
+            String cadena = "data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;";
             Planilla p = new Planilla();
+            p.coneccion = new Coneccion();
             Assert.IsTrue(p.Conexion(cadena));
         }
 
         [TestMethod]
         public void CadenaConexionIncorrectaShouldReturnFalse()
         {
-            String cadena = "Data Source=SERGIO;Initial Catalog=Ta; Integrated Security=True";
+            String cadena = "data source = Aqui Fallo; initial catalog = Taller; integrated security = True;";
             Planilla p = new Planilla();
-            Assert.IsTrue(p.Conexion(cadena));
+            p.coneccion = new Coneccion();
+            Assert.IsFalse(p.Conexion(cadena));
         }
     }
 }
