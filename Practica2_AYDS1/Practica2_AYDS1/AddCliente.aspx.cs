@@ -4,9 +4,9 @@ using System.Configuration;
 using System.Data;
 using Practica2_AYDS1;
 
-namespace Web_Practica2_AYD1
+namespace Practica2_AYDS1
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class AddCliente : System.Web.UI.Page
     {
 
         public Coneccion coneccion;
@@ -17,7 +17,7 @@ namespace Web_Practica2_AYD1
         {
             coneccion = new Coneccion();
 
-            coneccion.SetCadena("data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;");
+            coneccion.SetCadena("data source = HILBERTPC; initial catalog = Taller; integrated security = True;");
 
             mostrarClientes();
 
