@@ -327,5 +327,48 @@ namespace Practica2_AYDS1.Tests
 
         }
 
+        [TestMethod]
+        public void Prueba_ObtenerEntregas()
+        {
+            AddEntrega a = new AddEntrega();
+
+            a.coneccion = new Coneccion();
+
+            a.coneccion.SetCadena("data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;");
+
+
+            Assert.IsNotNull(a.getEntregas());
+
+
+        }
+
+        [TestMethod]
+        public void Prueba_nuevo_Entregas()
+        {
+            AddEntrega a = new AddEntrega();
+
+            a.coneccion = new Coneccion();
+
+            a.coneccion.SetCadena("data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;");
+
+            Assert.IsTrue(a.Agregar_Carro(1));
+
+
+        }
+
+        [TestMethod]
+        public void Prueba_nuevo_Entrega_fail()
+        {
+            AddEntrega a = new AddEntrega();
+
+            a.coneccion = new Coneccion();
+
+            a.coneccion.SetCadena("data source = Otra vez falle; initial catalog = Taller; integrated security = True;");
+
+            Assert.IsFalse(a.Agregar_Carro(1));
+
+
+        }
+
     }
 }
