@@ -14,5 +14,18 @@ namespace Practica2_AYDS1.Tests
 
             StringAssert.Contains(a.a, "hola");
         }
+        [TestMethod]
+        public void TestMethodConexion()
+        {
+            //Arrange
+            var cadena = "Data Source=HILBERTPC;Initial Catalog=Taller; Integrated Security=True";
+            var resultadoEsperado = "Correcto";
+            CrearRepuesto conec = new CrearRepuesto();
+            //Act 
+            var result = conec.Conexion(cadena);
+
+            //Result
+            Assert.AreEqual(resultadoEsperado, result);
+        }
     }
 }
