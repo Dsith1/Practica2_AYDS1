@@ -92,6 +92,7 @@
     <Compile Include="AddProveedor.aspx.designer.cs">
       <DependentUpon>AddProveedor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Coneccion.cs" />
     <Compile Include="CrearRepuesto.aspx.cs">
       <DependentUpon>CrearRepuesto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

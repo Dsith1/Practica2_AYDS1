@@ -2,33 +2,44 @@
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
+using Practica2_AYDS1;
 
 namespace Web_Practica2_AYD1
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        string cadena = "data source=DESKTOP-K27HD4T\\SQLEXPRESS;initial catalog=Taller;integrated security=True;";
-        SqlConnection con = null;
 
-        protected void Page_Load(object sender, EventArgs e)
+        Coneccion coneccion;
+        
+
+        public void Page_Load(object sender, EventArgs e)
         {
+            coneccion.SetCadena("data source = DESKTOP - K27HD4T\\SQLEXPRESS; initial catalog = Taller; integrated security = True;");
+
             mostrarClientes();
+
         }
 
-        protected void btnAgregarCliente_Click(object sender, EventArgs e)
+        public void btnAgregarCliente_Click(object sender, EventArgs e)
         {
+
+            AgregarCliente(txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, txtTelefono.Text);
+        }
+
+        public void AgregarCliente(string nombre1, string nombre2, string apellido1, string apellido2, string telefono)
+        {
+            SqlConnection con = coneccion.conectar();
             try
             {
-                con = new SqlConnection(cadena);
-                con.Open();
+
 
                 SqlCommand cmd = new SqlCommand("dbo.CrearCliente", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Nombre1", txtNombre1.Text);
-                cmd.Parameters.AddWithValue("@Nombr2", txtNombre2.Text);
-                cmd.Parameters.AddWithValue("@Apellido1", txtApellido1.Text);
-                cmd.Parameters.AddWithValue("@Apellido2", txtApellido2.Text);
-                cmd.Parameters.AddWithValue("@telefono", txtTelefono.Text);
+                cmd.Parameters.AddWithValue("@Nombre1", nombre1);
+                cmd.Parameters.AddWithValue("@Nombr2", nombre2);
+                cmd.Parameters.AddWithValue("@Apellido1", apellido1);
+                cmd.Parameters.AddWithValue("@Apellido2", apellido2);
+                cmd.Parameters.AddWithValue("@telefono", telefono);
                 cmd.ExecuteNonQuery();
 
                 Limpiar();
@@ -36,12 +47,14 @@ namespace Web_Practica2_AYD1
 
                 mostrarClientes();
             }
-            catch (Exception ex) { lblError.Text = ex.Message }
-            finally { con.Close(); }
-
+            catch (Exception ex) { lblError.Text = ex.Message; }
+            finally
+            {
+                coneccion.desconectar();
+            }
         }
 
-        protected void mostrarClientes()
+        public void mostrarClientes()
         {
             try
             {
@@ -56,13 +69,12 @@ namespace Web_Practica2_AYD1
         }
 
 
-        private DataSet getClientes()
+        public DataSet getClientes()
         {
+            SqlConnection con = coneccion.conectar();
             try
             {
                 DataSet lista = new DataSet();
-                con = new SqlConnection(cadena);
-                con.Open();
 
                 SqlCommand cmd = new SqlCommand("ListarCliente", con);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -73,12 +85,16 @@ namespace Web_Practica2_AYD1
 
                 return lista;
             }
-            catch (Exception ex) { throw ex; }
-            finally { con.Close(); }
+            catch (Exception ex) { throw ex;
+                return null;
+            }
+            finally { con.Close();
+                
+            }
 
         }
 
-        protected void Limpiar()
+        public void Limpiar()
         {
             txtApellido1.Text = "";
             txtApellido2.Text = "";

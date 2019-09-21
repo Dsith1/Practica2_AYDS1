@@ -16,7 +16,7 @@ create procedure CrearCliente(
 @Nombr2 varchar(20),
 @Apellido1 varchar(20),
 @Apellido2 varchar(20),
-telefono varchar(8)
+@telefono varchar(8)
 )
 as 
 insert into Cliente(Nombre1,Nombr2,Apellido1,Apellido2,telefono)

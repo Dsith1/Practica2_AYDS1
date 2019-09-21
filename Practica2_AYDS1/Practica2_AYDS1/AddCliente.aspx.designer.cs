@@ -46,7 +46,7 @@ namespace Web_Practica2_AYD1 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre1;
+        public global::System.Web.UI.WebControls.TextBox txtNombre1;
         
         /// <summary>
         /// Control Label2.
@@ -56,7 +56,7 @@ namespace Web_Practica2_AYD1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-        
+
         /// <summary>
         /// Control txtNombre2.
         /// </summary>
@@ -64,7 +64,7 @@ namespace Web_Practica2_AYD1 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre2;
+        public global::System.Web.UI.WebControls.TextBox txtNombre2;
         
         /// <summary>
         /// Control Label3.
@@ -74,7 +74,7 @@ namespace Web_Practica2_AYD1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-        
+
         /// <summary>
         /// Control txtApellido1.
         /// </summary>
@@ -82,7 +82,7 @@ namespace Web_Practica2_AYD1 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellido1;
+        public global::System.Web.UI.WebControls.TextBox txtApellido1;
         
         /// <summary>
         /// Control Label4.
@@ -92,7 +92,7 @@ namespace Web_Practica2_AYD1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-        
+
         /// <summary>
         /// Control txtApellido2.
         /// </summary>
@@ -100,7 +100,7 @@ namespace Web_Practica2_AYD1 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellido2;
+        public global::System.Web.UI.WebControls.TextBox txtApellido2;
         
         /// <summary>
         /// Control Label5.
@@ -110,7 +110,7 @@ namespace Web_Practica2_AYD1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label5;
-        
+
         /// <summary>
         /// Control txtTelefono.
         /// </summary>
@@ -118,7 +118,7 @@ namespace Web_Practica2_AYD1 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefono;
+        public global::System.Web.UI.WebControls.TextBox txtTelefono;
         
         /// <summary>
         /// Control btnAgregarCliente.
