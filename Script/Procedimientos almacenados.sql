@@ -21,3 +21,7 @@ telefono varchar(8)
 as 
 insert into Cliente(Nombre1,Nombr2,Apellido1,Apellido2,telefono)
 			values(@Nombre1,@Nombr2,@Apellido1,@Apellido2,@telefono);
+
+create procedure ListarCliente
+as 
+select * from Cliente;
