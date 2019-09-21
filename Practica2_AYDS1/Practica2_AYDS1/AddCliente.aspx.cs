@@ -32,8 +32,11 @@ namespace Web_Practica2_AYD1
                 cmd.ExecuteNonQuery();
 
                 Limpiar();
+                lblSucces.Text = "Cliente agregado exitosamente.";
+
+                mostrarClientes();
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex) { lblError.Text = ex.Message }
             finally { con.Close(); }
 
         }
