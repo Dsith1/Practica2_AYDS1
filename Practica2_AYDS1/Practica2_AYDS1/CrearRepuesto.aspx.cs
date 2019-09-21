@@ -15,7 +15,7 @@ namespace Practica2_AYDS1
         SqlConnection con;
 
         protected void Page_Load(object sender, EventArgs e)
-        {
+        { 
             Conexion(cadena);
         }
         protected void Conexion(string cadenaConexion)
@@ -34,14 +34,22 @@ namespace Practica2_AYDS1
                 cmd.Parameters.AddWithValue("@carroRep", TextBox2.Text);
                 cmd.Parameters.AddWithValue("@añoRep", Convert.ToInt32(TextBox3.Text));
                 cmd.Parameters.AddWithValue("@existenciasRep", TextBox4.Text);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                Limpiar();
+                //cmd.ExecuteNonQuery();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                GridView1.DataSource = dt;
             }
 
             catch (Exception ex)
             {
                 Console.WriteLine("Error al Ingresar repesto: ", ex.Message);
+            }
+            finally
+            {
+                con.Close();
+                Limpiar();
             }
         }
         protected void Limpiar()
