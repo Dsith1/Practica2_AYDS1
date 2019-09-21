@@ -241,5 +241,91 @@ namespace Practica2_AYDS1.Tests
 
         }
 
+        [TestMethod]
+        public void Prueba_ObtenerCarro()
+        {
+            ADDCarro a = new ADDCarro();
+
+            a.coneccion = new Coneccion();
+
+            a.coneccion.SetCadena("data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;");
+
+
+            Assert.IsNotNull(a.getCarros());
+
+
+        }
+
+        [TestMethod]
+        public void Prueba_nuevo_Carror()
+        {
+            ADDCarro a = new ADDCarro();
+
+            a.coneccion = new Coneccion();
+
+            a.coneccion.SetCadena("data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;");
+
+            Assert.IsTrue(a.Agregar_Carro("451jkl", "2222222","Negro","Supra",2009,1,1));
+
+
+        }
+
+        [TestMethod]
+        public void Prueba_nuevo_Carro_fail()
+        {
+            ADDCarro a = new ADDCarro();
+
+            a.coneccion = new Coneccion();
+
+            a.coneccion.SetCadena("data source = Otra vez falle; initial catalog = Taller; integrated security = True;");
+
+            Assert.IsFalse(a.Agregar_Carro("451jkl", "2222222", "Negro","supra", 2009, 1, 1));
+
+
+        }
+
+        [TestMethod]
+        public void Prueba_ObtenerFactura()
+        {
+            AddFactura a = new AddFactura();
+
+            a.coneccion = new Coneccion();
+
+            a.coneccion.SetCadena("data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;");
+
+
+            Assert.IsNotNull(a.getFacturas());
+
+
+        }
+
+        [TestMethod]
+        public void Prueba_nuevo_Factura()
+        {
+            AddFactura a = new AddFactura();
+
+            a.coneccion = new Coneccion();
+
+            a.coneccion.SetCadena("data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;");
+
+            Assert.IsTrue(a.AgregarFactura("A", 12, "Juan", "Ciudad", "4566-k"));
+
+
+        }
+
+        [TestMethod]
+        public void Prueba_nuevo_Factura_fail()
+        {
+            AddFactura a = new AddFactura();
+
+            a.coneccion = new Coneccion();
+
+            a.coneccion.SetCadena("data source = Otra vez falle; initial catalog = Taller; integrated security = True;");
+
+            Assert.IsFalse(a.AgregarFactura("A", 12, "Juan", "Ciudad", "4566-k"));
+
+
+        }
+
     }
 }

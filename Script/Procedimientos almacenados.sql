@@ -54,3 +54,37 @@ create procedure ListarProveedores
 as 
 select * from Proveedor;
 
+
+create procedure CrearCarro(
+@placa  varchar(6),
+@motor  varchar(20),
+@color  varchar(20),
+@modelo varchar(20),
+@año    int,
+@marca  int,
+@duenio int
+)
+as 
+insert into  Carro(placa,motor ,color,modelo ,año,marca ,duenio)
+			values(@placa,@motor ,@color,@modelo ,@año,@marca ,@duenio);
+
+
+create procedure ListarCarros
+as 
+select * from Carro;
+
+create procedure CrearFactura(
+@serie  varchar(2),
+@numero  int,
+@nombre  varchar(30),
+@dir varchar(20),
+@nit    varchar(10)
+)
+as 
+insert into  factura(serie,no_factura ,a_nombre,direccion ,nit)
+			values(@serie,@numero ,@nombre,@dir ,@nit);
+
+
+create procedure ListarFacturas
+as 
+select * from factura;

@@ -67,7 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ADDCarro.aspx" />
     <Content Include="AddCliente.aspx" />
+    <Content Include="AddEntrega.aspx" />
+    <Content Include="AddFactura.aspx" />
     <Content Include="AddProveedor.aspx" />
     <Content Include="Content\Style1.css" />
     <Content Include="Content\Style2.css" />
@@ -78,12 +81,33 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADDCarro.aspx.cs">
+      <DependentUpon>ADDCarro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADDCarro.aspx.designer.cs">
+      <DependentUpon>ADDCarro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddCliente.aspx.cs">
       <DependentUpon>AddCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddCliente.aspx.designer.cs">
       <DependentUpon>AddCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEntrega.aspx.cs">
+      <DependentUpon>AddEntrega.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEntrega.aspx.designer.cs">
+      <DependentUpon>AddEntrega.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddFactura.aspx.cs">
+      <DependentUpon>AddFactura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddFactura.aspx.designer.cs">
+      <DependentUpon>AddFactura.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddProveedor.aspx.cs">
       <DependentUpon>AddProveedor.aspx</DependentUpon>
