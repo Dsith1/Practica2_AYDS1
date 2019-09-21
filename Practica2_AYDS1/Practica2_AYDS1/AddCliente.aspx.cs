@@ -85,11 +85,12 @@ namespace Web_Practica2_AYD1
 
                 return lista;
             }
-            catch (Exception ex) { throw ex;
-                return null;
-            }
-            finally { con.Close();
-                
+            catch (Exception ex) { throw ex; }
+
+            finally
+            {
+                con.Close();
+
             }
 
         }
