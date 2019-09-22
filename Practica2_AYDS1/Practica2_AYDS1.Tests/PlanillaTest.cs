@@ -75,7 +75,7 @@ namespace Practica2_AYDS1.Tests
             Planilla planilla = new Planilla();
 
             planilla.coneccion = new Coneccion();
-            String cadena = "data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;";
+            String cadena = "data source = HILBERTPC; initial catalog = Taller; integrated security = True;";
             planilla.Conexion(cadena);
 
 
@@ -103,7 +103,7 @@ namespace Practica2_AYDS1.Tests
         [TestMethod]
         public void CadenaConexionCorrectaShouldReturnTrue()
         {
-            String cadena = "data source = LAPTOP-IFGR27P8; initial catalog = Taller; integrated security = True;";
+            String cadena = "data source = HILBERTPC; initial catalog = Taller; integrated security = True;";
             Planilla p = new Planilla();
             p.coneccion = new Coneccion();
             Assert.IsTrue(p.Conexion(cadena));

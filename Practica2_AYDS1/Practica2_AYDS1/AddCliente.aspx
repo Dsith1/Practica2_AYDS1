@@ -1,25 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Web_Practica2_AYD1.WebForm1" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AddCliente.aspx.cs" Inherits="Practica2_AYDS1.AddCliente" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Nuevo Cliente</title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 193px;
-        }
-        .auto-style2 {
-            margin-left: 79px;
-        }
-        .auto-style3 {
-            margin-left: 83px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div>
             <asp:HiddenField ID="HFUsuario" runat="server" />
             <table class="auto-style2">
@@ -119,7 +102,4 @@
         </asp:GridView>
 
     </div>
-    </form>
-
-    </body>
-</html>
+</asp:Content>

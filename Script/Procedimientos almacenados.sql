@@ -89,25 +89,10 @@ create procedure ListarFacturas
 as 
 select * from factura;
 
-create procedure CrearFactura(
-@entrega date,
-@numero  int,
-@nombre  varchar(30),
-@dir	 varchar(20),
-@nit    varchar(10)
-)
-as 
-insert into  factura(serie,no_factura ,a_nombre,direccion ,nit)
-			values(@serie,@numero ,@nombre,@dir ,@nit);
-
-
-create procedure ListarFacturas
-as 
-select * from factura;
 
 create procedure CrearEntregaBeta(
 
-@carro  int,
+@carro  int
 
 )
 as 

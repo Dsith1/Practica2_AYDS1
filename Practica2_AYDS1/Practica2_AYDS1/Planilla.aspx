@@ -55,9 +55,8 @@
                 <asp:BoundField DataField="Apellido1" HeaderText="Apellido1" SortExpression="Apellido1" />
                 <asp:BoundField DataField="Apellido2" HeaderText="Apellido2" SortExpression="Apellido2" />
                 <asp:BoundField DataField="Salario" HeaderText="Salario" SortExpression="Salario" />
-                <asp:CommandField ShowEditButton="True" />
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSourceSG" runat="server" ConnectionString="<%$ ConnectionStrings:TallerConnectionString %>" SelectCommand="SELECT * FROM [Planilla]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSourceSG" runat="server" ConnectionString="<%$ ConnectionStrings:TallerConnectionString2 %>" SelectCommand="SELECT * FROM [Planilla]"></asp:SqlDataSource>
 
 </asp:Content>

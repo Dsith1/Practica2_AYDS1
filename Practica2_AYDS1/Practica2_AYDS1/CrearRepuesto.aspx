@@ -38,13 +38,14 @@
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id_repuesto" DataSourceID="SqlDataSource1">
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                <asp:BoundField DataField="id_repuesto" HeaderText="id_repuesto" SortExpression="id_repuesto" InsertVisible="False" ReadOnly="True" />
                 <asp:BoundField DataField="parte" HeaderText="parte" SortExpression="parte" />
                 <asp:BoundField DataField="carro" HeaderText="carro" SortExpression="carro" />
                 <asp:BoundField DataField="año" HeaderText="año" SortExpression="año" />
                 <asp:BoundField DataField="existencias" HeaderText="existencias" SortExpression="existencias" />
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:TallerConexion %>" DeleteCommand="DELETE FROM [Repuesto] WHERE [id_repuesto] = @original_id_repuesto AND [parte] = @original_parte AND [carro] = @original_carro AND [año] = @original_año AND (([existencias] = @original_existencias) OR ([existencias] IS NULL AND @original_existencias IS NULL))" InsertCommand="INSERT INTO [Repuesto] ([parte], [carro], [año], [existencias]) VALUES (@parte, @carro, @año, @existencias)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Repuesto]" UpdateCommand="UPDATE [Repuesto] SET [parte] = @parte, [carro] = @carro, [año] = @año, [existencias] = @existencias WHERE [id_repuesto] = @original_id_repuesto AND [parte] = @original_parte AND [carro] = @original_carro AND [año] = @original_año AND (([existencias] = @original_existencias) OR ([existencias] IS NULL AND @original_existencias IS NULL))">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:TallerConnectionString3 %>" DeleteCommand="DELETE FROM [Repuesto] WHERE [id_repuesto] = @original_id_repuesto AND [parte] = @original_parte AND [carro] = @original_carro AND [año] = @original_año AND (([existencias] = @original_existencias) OR ([existencias] IS NULL AND @original_existencias IS NULL))" InsertCommand="INSERT INTO [Repuesto] ([parte], [carro], [año], [existencias]) VALUES (@parte, @carro, @año, @existencias)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Repuesto]" UpdateCommand="UPDATE [Repuesto] SET [parte] = @parte, [carro] = @carro, [año] = @año, [existencias] = @existencias WHERE [id_repuesto] = @original_id_repuesto AND [parte] = @original_parte AND [carro] = @original_carro AND [año] = @original_año AND (([existencias] = @original_existencias) OR ([existencias] IS NULL AND @original_existencias IS NULL))">
             <DeleteParameters>
                 <asp:Parameter Name="original_id_repuesto" Type="Int32" />
                 <asp:Parameter Name="original_parte" Type="String" />
